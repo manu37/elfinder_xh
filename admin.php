@@ -242,6 +242,13 @@ if($adm)
 		*/
 		$hjs .= '<script type="text/javascript">
 			$().ready(function() {
+        // Add this before elFinder initialization - get ready for  jQuery UI >= 1.12
+                if ($.ui && !$.fn.buttonset && $.fn.controlgroup) {
+                    $.fn.buttonset = function() {
+                        return this.controlgroup.apply(this, arguments);
+                    };
+                }
+                
 				$(".elfinder").elfinder({
 					url         : "' . $pth['folder']['plugins'] . $plugin . '/connectors/connector.minimal_xh.php",
 					lang        : "' . $_SESSION['elfinder']['lang'] . '",
