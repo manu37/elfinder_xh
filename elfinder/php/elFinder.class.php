@@ -389,7 +389,10 @@ class elFinder {
 			foreach ($opts['bind'] as $cmd => $handlers) {
 				$doRegist = (strpos($cmd, '*') !== false);
 				if (! $doRegist) {
-					$_getcmd = create_function('$cmd', 'list($ret) = explode(\'.\', $cmd);return trim($ret);');
+					$_getcmd = function($a) {
+                         list($ret) = explode('.', $a);
+                         return trim($ret);
+                    };
 					$doRegist = ($_reqCmd && in_array($_reqCmd, array_map($_getcmd, explode(' ', $cmd))));
 				}
 				if ($doRegist) {
@@ -1621,7 +1624,7 @@ class elFinder {
 					$url = trim($matches[1]);
 					$hash = isset($matches[2])? trim($matches[2]) : '';
 					if (!preg_match('/^https?:\//',$url)) { // no scheme
-						if ($url{0} != '/') { // Relative path
+						if ($url[0] != '/') { // Relative path
 							// to Absolute path
 							$url = substr($url_path,0,strrpos($url_path,'/')).'/'.$url;
 						}
