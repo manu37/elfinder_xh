@@ -83,7 +83,6 @@ function el_logincheck()
 		      // pass selected file path to TinyMCE
 		      top.filebrowsercallback(URL);
 
-		      // force the TinyMCE dialog to refresh and fill in the image dimensions
 		      // close popup window
 		      top.filebrowserwindow.close();
 		    }
