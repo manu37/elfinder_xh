@@ -84,9 +84,6 @@ function el_logincheck()
 		      top.filebrowsercallback(URL);
 
 		      // force the TinyMCE dialog to refresh and fill in the image dimensions
-		      var t = parent.tinymce.activeEditor.windowManager.windows[0];
-		      t.find('#src').fire('change');
-
 		      // close popup window
 		      top.filebrowserwindow.close();
 		    }
