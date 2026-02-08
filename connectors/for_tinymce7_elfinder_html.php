@@ -34,6 +34,10 @@ function el_logincheck()
         && isset($_SESSION['xh_user_agent'])
         && $_SESSION['xh_user_agent'] == md5($_SERVER['HTTP_USER_AGENT']);
 }
+
+
+?>
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,14 +81,14 @@ function el_logincheck()
 		    },
 		    mySubmit: function (URL) {
 		      // pass selected file path to TinyMCE
-		      parent.tinymce.activeEditor.windowManager.getParams().setUrl(URL);
+		      top.filebrowsercallback(URL);
 
 		      // force the TinyMCE dialog to refresh and fill in the image dimensions
 		      var t = parent.tinymce.activeEditor.windowManager.windows[0];
 		      t.find('#src').fire('change');
 
 		      // close popup window
-		      parent.tinymce.activeEditor.windowManager.close();
+		      top.filebrowserwindow.close();
 		    }
 		  }
 
