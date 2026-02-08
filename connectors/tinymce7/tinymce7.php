@@ -1,9 +1,10 @@
 <?php
 /*
  * Include file to enable and configure
- * elFinder for TinyMCE4.
+ * elFinder for TinyMCE7.
  *
  * @author  Takashi Uchiyama
+ * @adaptor Emanuel Marinello
  * @link    http://cmsimple-jp.org
  * @version 1.01
  */
