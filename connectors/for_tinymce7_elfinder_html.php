@@ -37,8 +37,6 @@ function el_logincheck()
 
 
 ?>
-
-?>
 <!DOCTYPE html>
 <html>
 	<head>
